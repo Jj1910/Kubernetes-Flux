@@ -13,10 +13,11 @@ metadata:
   name: headlamp
   namespace: kube-system
 spec:
-  interval: 30m
+  interval: 1m0s
   chart:
     spec:
       chart: headlamp
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: headlamp
