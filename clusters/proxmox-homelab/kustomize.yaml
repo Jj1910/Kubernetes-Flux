@@ -10,7 +10,7 @@ spec:
   timeout: 5m
   sourceRef:
     kind: GitRepository
-    name: kubernetes-flux
+    name: flux-system
   path: ./clusters/namespaces
   prune: true
   wait: true
@@ -28,7 +28,7 @@ spec:
   timeout: 5m
   sourceRef:
     kind: GitRepository
-    name: kubernetes-flux
+    name: flux-system
   path: ./clusters/apps
   prune: true
   wait: true
