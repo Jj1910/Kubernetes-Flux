@@ -9,9 +9,9 @@ spec:
   retryInterval: 2m
   timeout: 5m
   sourceRef:
-    kind: ExternalArtifact
-    name: namespaces
-  path: ./
+    kind: GitRepository
+    name: kubernetes-flux
+  path: ./namespaces
   prune: true
   wait: true
 ---
@@ -27,8 +27,8 @@ spec:
   retryInterval: 2m
   timeout: 5m
   sourceRef:
-    kind: ExternalArtifact
-    name: apps
-  path: ./
+    kind: GitRepository
+    name: kubernetes-flux
+  path: ./apps
   prune: true
   wait: true
