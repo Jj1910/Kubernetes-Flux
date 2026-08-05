@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-deployment
-  namespace: default
+  namespace: kodekloud-deployment
   labels:
     tier: frontend
     app: nginx
