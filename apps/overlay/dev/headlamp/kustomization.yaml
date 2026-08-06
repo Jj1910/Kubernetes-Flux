@@ -9,7 +9,6 @@ namePrefix: dev-
 patches:
   - target:
       kind: HelmRepository
-      name: headlamp
     patch: |-
       - op: replace
         path: /metadata/name
