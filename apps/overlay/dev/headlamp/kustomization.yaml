@@ -8,9 +8,9 @@ namePrefix: dev-
 
 patches:
   - target:
-      kind: HelmRelease
+      kind: HelmRepository
       name: headlamp
     patch: |-
       - op: replace
-        path: /spec/chart/spec/sourceRef/name
-        value: dev-headlamp
+        path: metadata
+        value: headlamp
