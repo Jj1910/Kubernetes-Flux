@@ -11,7 +11,8 @@ patches:
       kind: HelmRelease
       name: headlamp
     patch: |
-      chart:
-        spec:
-          sourceRef:
-            name: dev-headlamp
+  spec:
+    chart:
+      spec:
+        sourceRef:
+          name: dev-headlamp
