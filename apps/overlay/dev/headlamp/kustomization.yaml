@@ -5,12 +5,16 @@ resources:
   - ../../../base/headlamp
 
 namePrefix: dev-
+#kind: HelmRepository
+#metadata:
+#  name: dev-headlamp
+#  namespace: kube-system
 
 patches:
   - target:
       kind: HelmRepository
-      name: "*"
+      name: headlamp
     patch: |-
       - op: replace
-        path: /metadata/name
+        path: /name
         value: headlamp
