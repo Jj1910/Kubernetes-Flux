@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./clusters/namespaces
+  path: namespaces
   prune: true
   wait: true
 ---
@@ -29,7 +29,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./clusters/apps
+  path: apps
   prune: true
   wait: true
 ---
@@ -47,6 +47,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./clusters/helm
+  path: helm
   prune: true
   wait: true
