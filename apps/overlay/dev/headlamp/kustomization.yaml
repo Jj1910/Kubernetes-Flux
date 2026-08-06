@@ -12,5 +12,5 @@ patches:
       name: headlamp
     patch: |-
       - op: replace
-        path: metadata
+        path: /metadata
         value: headlamp
