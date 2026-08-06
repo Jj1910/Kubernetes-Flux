@@ -10,9 +10,9 @@ patches:
   - target:
       kind: HelmRelease
       name: headlamp
-    patch: |
-    spec:
-      chart:
-        spec:
-          sourceRef:
-            name: dev-headlamp
+    patch: |-
+      spec:
+        chart:
+          spec:
+            sourceRef:
+              name: dev-headlamp
