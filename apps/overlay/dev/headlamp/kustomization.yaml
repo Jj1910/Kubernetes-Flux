@@ -10,9 +10,7 @@ patches:
   - target:
       kind: HelmRelease
       name: headlamp
-    patch: |-
-      spec:
-        chart:
-          spec:
-            sourceRef:
-              name: dev-headlamp
+    patch: 
+  - op: replace
+    path: /spec/chart/spec/sourceRef/name
+    value: dev-headlamp
