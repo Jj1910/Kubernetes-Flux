@@ -3,9 +3,12 @@ kind: Kustomization
 resources:
   - ../../../base/headlamp
 namePrefix: dev-
-patch:
-  spec:
-    chart:
+patches:
+  - target:
+      kind: HelmRelease
+    patch:
       spec:
-        sourceRef:
-          name: dev-headlamp
+        chart:
+          spec:
+            sourceRef:
+              name: dev-headlamp
