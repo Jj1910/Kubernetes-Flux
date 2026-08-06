@@ -3,3 +3,9 @@ kind: Kustomization
 resources:
   - ../../../base/headlamp
 namePrefix: dev-
+patch:
+  spec:
+    chart:
+      spec:
+        sourceRef:
+          name: dev-headlamp
