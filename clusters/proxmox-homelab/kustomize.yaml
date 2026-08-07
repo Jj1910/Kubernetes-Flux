@@ -20,6 +20,22 @@ metadata:
   name: shared-overlay
   namespace: flux-system
 spec:
+  interval: 1h
+  retryInterval: 2m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: apps/overlay/shared
+  prune: true
+  wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: monitoring
+  namespace: flux-system
+spec:
   healthChecks:
   - kind: Deployment
     name: prometheus
@@ -28,11 +44,10 @@ spec:
     name: grafana
     namespace: flux-system
   interval: 1h
-  retryInterval: 2m
-  timeout: 5m
+  timeout: 2m
   sourceRef:
     kind: GitRepository
-    name: flux-system
-  path: apps/overlay/shared
+    name: monitoring
+  path: manifests/monitoring
   prune: true
   wait: true
