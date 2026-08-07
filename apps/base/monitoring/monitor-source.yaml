@@ -8,4 +8,6 @@ spec:
   interval: 30m0s
   ref:
     branch: main
-  url: https://github.com/fluxcd/flux2-monitoring-example.git
+  secretRef:
+    name: flux-system
+  url: git@github.com:Jj1910/flux2-monitoring-example.git
