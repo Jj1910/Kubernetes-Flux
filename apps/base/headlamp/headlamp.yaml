@@ -40,7 +40,6 @@ spec:
     volumeMounts:
       - mountPath: /build/plugins
         name: headlamp-plugins
-    volumeMounts:
       - mountPath: /build/plugins
         name: headlamp-plugins
     volumes:
