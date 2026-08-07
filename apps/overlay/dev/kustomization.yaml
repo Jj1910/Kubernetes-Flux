@@ -4,5 +4,3 @@ resources:
   - headlamp
   - metrics-server
   - headlamp-repo
-  - kube-prometheus
-  - kube-prometheus-repo
