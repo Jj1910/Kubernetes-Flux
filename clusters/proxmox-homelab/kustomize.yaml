@@ -48,6 +48,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: monitoring
-  path: manifests/monitoring
+  path: clusters/test
   prune: true
   wait: true
