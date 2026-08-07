@@ -22,6 +22,7 @@ spec:
       type: NodePort
       port: 80
       nodePort: 30003
+    #Flux Plugin
     config:
       pluginsDir: /build/plugins
     initContainers:
