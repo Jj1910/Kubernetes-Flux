@@ -10,4 +10,4 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com:Jj1910/flux2-monitoring-example.git
+  url: ssh://git@github.com/Jj1910/flux2-monitoring-example.git
