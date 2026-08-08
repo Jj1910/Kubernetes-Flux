@@ -20,3 +20,5 @@ spec:
       ui:
         type: NodePort
         nodePort: 30004
+    persistence:
+      reclaimPolicy: Retain
