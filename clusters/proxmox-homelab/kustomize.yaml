@@ -14,18 +14,18 @@ spec:
   prune: true
   wait: true
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: shared-overlay
-  namespace: flux-system
-spec:
-  interval: 1h
-  retryInterval: 2m
-  timeout: 5m
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  path: apps/overlay/shared
-  prune: true
-  wait: true
+#apiVersion: kustomize.toolkit.fluxcd.io/v1
+#kind: Kustomization
+#metadata:
+#  name: shared-overlay
+#  namespace: flux-system
+#spec:
+#  interval: 1h
+#  retryInterval: 2m
+#  timeout: 5m
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-system
+#  path: apps/overlay/shared
+#  prune: true
+#  wait: true
