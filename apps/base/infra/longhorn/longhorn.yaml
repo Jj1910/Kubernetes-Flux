@@ -14,3 +14,9 @@ spec:
       version: v1.12.0
   interval: 1m0s
   values:
+    defaultSettings:
+      defaultDataPath: /var/mnt/longhorn
+    service:
+      ui:
+        type: NodePort
+        nodePort: 30004
