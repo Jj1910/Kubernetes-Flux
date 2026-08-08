@@ -4,5 +4,5 @@ resources:
   - headlamp
   - metrics-server
   - headlamp-repo
-  #- longhorn
+  - longhorn
   - longhorn-repo
