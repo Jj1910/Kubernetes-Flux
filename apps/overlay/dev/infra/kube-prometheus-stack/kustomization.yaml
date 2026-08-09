@@ -7,12 +7,12 @@ resources:
 namePrefix: dev-
 
 patches:
-  -target:
-    kind: HelmRelease
-    name: kube-prometheus-stack
-   patch: |-
-   - op: add
-     path: /spec/values/grafana
-     value:
-      adminUser: demo
-      adminPassword: demopass
+  - target:
+      kind: HelmRelease
+      name: kube-prometheus-stack
+    patch: |-
+    - op: add
+      path: /spec/values/grafana
+      value:
+        adminUser: demo
+        adminPassword: demopass
