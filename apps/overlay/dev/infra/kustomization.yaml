@@ -4,7 +4,7 @@ resources:
   - headlamp
   - metrics-server
   - headlamp-repo
-  #- longhorn
-  #- longhorn-repo
+  - longhorn
+  - longhorn-repo
   - kube-prometheus-stack-repo
   - kube-prometheus-stack
