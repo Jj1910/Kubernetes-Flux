@@ -6,3 +6,5 @@ resources:
   - headlamp-repo
   - longhorn
   - longhorn-repo
+  - kube-prometheus-stack-repo
+  - kube-prometheus-stack
