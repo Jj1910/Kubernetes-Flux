@@ -1,0 +1,42 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: kube-prometheus-stack
+  namespace: flux-system
+spec:
+  interval: 1h
+  retryInterval: 2m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: apps/base/infra/longhorn-repo
+  prune: true
+  wait: true
+  namePrefix: dev-
+  patches:
+  - target:
+      kind: HelmRelease
+      name: kube-prometheus-stack
+    patch: |-
+      - op: add
+        path: /spec/values
+        value: 
+          grafana:
+            adminUser: demo
+            adminPassword: demopass
+            service:
+              type: NodePort
+              nodePort: 30005
+  - target:
+      kind: Namespace
+      name: monitoring-system
+    patch: |-
+      - op: add
+        path: /metadata
+        value:
+          name: monitoring-system
+          labels:
+            pod-security.kubernetes.io/enforce: privileged
+            pod-security.kubernetes.io/audit: privileged
+            pod-security.kubernetes.io/warn: privileged
