@@ -20,3 +20,14 @@ patches:
           service:
             type: NodePort
             nodePort: 30005
+- target:
+    kind: Namespace
+    name: monitoring-system
+  patch: |-
+    - op: add
+      path: /metadata
+      value:
+        labels:
+          pod-security.kubernetes.io/enforce: privileged
+          pod-security.kubernetes.io/audit: privileged
+          pod-security.kubernetes.io/warn: privileged

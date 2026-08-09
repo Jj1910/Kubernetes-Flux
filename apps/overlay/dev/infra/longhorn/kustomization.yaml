@@ -5,3 +5,31 @@ resources:
   - ../../../../base/infra/longhorn
 
 namePrefix: dev-
+
+patches:
+- target:
+    kind: HelmRelease
+    name: kube-prometheus-stack
+  patch: |-
+    - op: add
+      path: /spec/values
+      value: 
+        defaultSettings:
+          defaultDataPath: /var/mnt/longhorn
+        service:
+          ui:
+            type: NodePort
+            nodePort: 30004
+        persistence:
+          reclaimPolicy: Retain
+- target:
+    kind: Namespace
+    name: longhorn-system
+  patch: |-
+    - op: add
+      path: /metadata
+      value:
+        labels:
+          pod-security.kubernetes.io/enforce: privileged
+          pod-security.kubernetes.io/audit: privileged
+          pod-security.kubernetes.io/warn: privileged
