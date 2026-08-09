@@ -6,7 +6,8 @@ resources:
 
 namePrefix: dev-
 
-values:
-  grafana:
-    adminUser: adminUser
-    adminPassword: demopass
+spec:
+  values:
+    grafana:
+      adminUser: adminUser
+      adminPassword: demopass
