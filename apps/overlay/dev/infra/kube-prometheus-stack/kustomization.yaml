@@ -13,9 +13,7 @@ patches:
   patch: |-
     - op: add
       path: /spec/values
-      value: grafana
-    - op: add
-      path: /spec/values/grafana
-      value:
-        adminUser: demo
-        adminPassword: demopass
+      value: 
+        grafana:
+          adminUser: demo
+          adminPassword: demopass
