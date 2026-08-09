@@ -17,3 +17,6 @@ patches:
         grafana:
           adminUser: demo
           adminPassword: demopass
+          service:
+            type: NodePort
+            nodePort: 30005
