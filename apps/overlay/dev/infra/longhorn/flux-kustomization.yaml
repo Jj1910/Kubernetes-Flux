@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: apps/base/infra/longhorn-repo
+  path: apps/base/infra/longhorn
   prune: true
   wait: true
   namePrefix: dev-
