@@ -22,8 +22,3 @@ spec:
         kind: HelmRepository
         name: kube-prometheus-stack
         namespace: monitoring-system
-  values:
-    grafana:
-      service:
-        type: NodePort
-        nodePort: 30005
