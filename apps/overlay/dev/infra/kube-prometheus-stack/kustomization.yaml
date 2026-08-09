@@ -5,3 +5,8 @@ resources:
   - ../../../../base/infra/kube-prometheus-stack
 
 namePrefix: dev-
+
+values:
+  grafana:
+    adminUser: adminUser
+    adminPassword: demopass
