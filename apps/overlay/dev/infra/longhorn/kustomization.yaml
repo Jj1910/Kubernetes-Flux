@@ -16,6 +16,7 @@ patches:
       value: 
         defaultSettings:
           defaultDataPath: /var/mnt/longhorn
+          deletingConfirmationFlag: "true"
         service:
           ui:
             type: NodePort

@@ -18,3 +18,5 @@ spec:
         name: longhorn-repo
       version: v1.12.0
   interval: 1m0s
+  uninstall:
+    deletionPropogation: foreground
