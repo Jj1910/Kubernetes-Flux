@@ -9,7 +9,7 @@ namePrefix: dev-
 patches:
 - target:
     kind: HelmRelease
-    name: kube-prometheus-stack
+    name: longhorn-release
   patch: |-
     - op: add
       path: /spec/values
