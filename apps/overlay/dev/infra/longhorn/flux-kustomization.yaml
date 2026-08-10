@@ -4,6 +4,7 @@ metadata:
   name: longhorn-system
   namespace: flux-system
 spec:
+  suspend: true
   dependsOn:
     - name: longhorn-repo
   interval: 1h
