@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: kube-prometheus-stack
-  namespace: flux-system
+  name: infrastructure-kube-prometheus-stack
+  namespace: infrastructure
 spec:
   dependsOn:
-    - name: kube-prometheus-stack-repo
+    - name: infrastructure-kube-prometheus-stack-repo
   interval: 1h
   retryInterval: 2m
   timeout: 5m

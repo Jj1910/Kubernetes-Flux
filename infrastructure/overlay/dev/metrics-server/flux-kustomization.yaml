@@ -1,8 +1,8 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: metrics-server
-  namespace: flux-system
+  name: infrastructure-metrics-server
+  namespace: infrastructure
 spec:
   interval: 1h
   retryInterval: 2m
