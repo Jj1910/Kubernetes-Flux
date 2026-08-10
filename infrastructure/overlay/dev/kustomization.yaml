@@ -8,5 +8,5 @@ resources:
   - longhorn-repo
   - kube-prometheus-stack-repo
   - kube-prometheus-stack
-  - metallb
   - metallb-repo
+  - metallb
