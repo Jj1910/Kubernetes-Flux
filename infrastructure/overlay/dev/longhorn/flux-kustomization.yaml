@@ -21,6 +21,10 @@ spec:
       kind: HelmRelease
       name: longhorn-release
     patch: |-
+      - op: replace
+        path: /spec/chart/version
+        value: v1.12.0
+        
       - op: add
         path: /spec/values
         value: 
