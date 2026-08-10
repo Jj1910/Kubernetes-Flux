@@ -3,8 +3,6 @@ kind: Kustomization
 metadata:
   name: longhorn-system
   namespace: flux-system
-  annotations:
-    kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
   dependsOn:
     - name: longhorn-repo
