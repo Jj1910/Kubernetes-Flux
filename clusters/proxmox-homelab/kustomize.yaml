@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: dev-overlay
+  name: dev-infrastructure-overlay
   namespace: flux-system
 spec:
   interval: 1h
@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: apps/overlay/dev
+  path: infrastructure/overlay/dev
   prune: true
   wait: true
 ---
