@@ -1,0 +1,26 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infrastructure-metallb-system
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infrastructure-metallb-repo
+  interval: 1h
+  retryInterval: 2m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: infrastructure/base/metallb
+  prune: true
+  wait: true
+  namePrefix: dev-flux-
+  patches:
+  - target:
+      kind: HelmRelease
+      name: metallb-release
+    patch: |-
+      - op: replace
+        path: /spec/chart/spec/version
+        value: v0.16.1

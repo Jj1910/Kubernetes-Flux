@@ -1,15 +1,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: longhorn-release
-  namespace: longhorn-system
+  name: metallb-release
+  namespace: metallb-system
 spec:
   chart:
     spec:
-      chart: longhorn
+      chart: metallb
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: longhorn-repo
+        name: metallb-repo
       version: "*"
   interval: 1m0s
