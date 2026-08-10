@@ -4,6 +4,8 @@ metadata:
   name: longhorn-system
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: longhorn-repo
   interval: 1h
   retryInterval: 2m
   timeout: 5m
@@ -13,7 +15,7 @@ spec:
   path: apps/base/infra/longhorn
   prune: true
   wait: true
-  namePrefix: dev-
+  namePrefix: dev-flux-
   patches:
   - target:
       kind: HelmRelease
@@ -31,15 +33,3 @@ spec:
               nodePort: 30004
           persistence:
             reclaimPolicy: Retain
-  - target:
-      kind: Namespace
-      name: longhorn-system
-    patch: |-
-      - op: add
-        path: /metadata
-        value:
-          name: longhorn-system
-          labels:
-            pod-security.kubernetes.io/enforce: privileged
-            pod-security.kubernetes.io/audit: privileged
-            pod-security.kubernetes.io/warn: privileged

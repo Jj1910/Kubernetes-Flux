@@ -4,6 +4,8 @@ metadata:
   name: kube-prometheus-stack
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: kube-prometheus-stack-repo
   interval: 1h
   retryInterval: 2m
   timeout: 5m
@@ -13,7 +15,7 @@ spec:
   path: apps/base/infra/kube-prometheus-stack
   prune: true
   wait: true
-  namePrefix: dev-
+  namePrefix: dev-flux-
   patches:
   - target:
       kind: HelmRelease
@@ -28,15 +30,3 @@ spec:
             service:
               type: NodePort
               nodePort: 30005
-  - target:
-      kind: Namespace
-      name: monitoring-system
-    patch: |-
-      - op: add
-        path: /metadata
-        value:
-          name: monitoring-system
-          labels:
-            pod-security.kubernetes.io/enforce: privileged
-            pod-security.kubernetes.io/audit: privileged
-            pod-security.kubernetes.io/warn: privileged
