@@ -21,6 +21,10 @@ spec:
       kind: HelmRelease
       name: kube-prometheus-stack
     patch: |-
+      - op: replace
+        path: /spec/chart/spec/version
+        value: 88.2.0
+
       - op: add
         path: /spec/values
         value: 

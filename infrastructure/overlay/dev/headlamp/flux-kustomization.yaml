@@ -15,12 +15,18 @@ spec:
   path: infrastructure/base/headlamp
   prune: true
   wait: true
+
   namePrefix: dev-flux-
+
   patches:
   - target:
       kind: HelmRelease
       name: headlamp
     patch: |-
+      - op: replace
+        path: /spec/chart/spec/version
+        value: 0.44.0
+
       - op: add
         path: /spec/values
         value:
