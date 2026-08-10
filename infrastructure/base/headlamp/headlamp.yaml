@@ -11,5 +11,5 @@ spec:
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: headlamp
+        name: headlamp-repo
         namespace: kube-system
