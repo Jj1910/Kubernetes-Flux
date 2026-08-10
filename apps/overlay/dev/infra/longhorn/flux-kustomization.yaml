@@ -3,8 +3,9 @@ kind: Kustomization
 metadata:
   name: longhorn-system
   namespace: flux-system
+  labels:
+    kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
-  suspend: true
   dependsOn:
     - name: longhorn-repo
   interval: 1h
