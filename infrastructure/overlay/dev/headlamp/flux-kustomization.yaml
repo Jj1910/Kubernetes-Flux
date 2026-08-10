@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: infrastructure-headlamp
-  namespace: infrastructure
+  namespace: flux-system
 spec:
   dependsOn:
     - name: infrastructure-headlamp-repo
