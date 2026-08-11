@@ -11,5 +11,5 @@ resources:
   - metallb-repo
   - metallb
   - metallb-config
-  #- traefik-repo
-  #- traefik
+  - traefik-repo
+  - traefik

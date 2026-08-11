@@ -42,7 +42,7 @@ spec:
                 - web
           providers:
             kubernetesGateway:
-              enabled: true
+              enabled: false
           gateway:
             listeners:
               web:
