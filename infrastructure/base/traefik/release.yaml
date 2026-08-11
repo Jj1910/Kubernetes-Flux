@@ -1,15 +1,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: headlamp-release
-  namespace: kube-system
+  name: traefik-release
+  namespace: traefik
 spec:
   interval: 1m0s
   chart:
     spec:
-      chart: headlamp
+      chart: traefik
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: headlamp-repo
-        namespace: kube-system
+        name: traefik-repo
+        namespace: traefik

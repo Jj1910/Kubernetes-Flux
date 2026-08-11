@@ -1,0 +1,50 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infrastructure-traefik
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infrastructure-traefik-repo
+  interval: 1h
+  retryInterval: 2m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: infrastructure/base/traefik
+  prune: true
+  wait: true
+
+  namePrefix: dev-flux-
+
+  patches:
+  - target:
+      kind: HelmRelease
+      name: traefik-release
+    patch: |-
+      - op: replace
+        path: /spec/chart/spec/version
+        value: "v41.20.0"
+
+      - op: add
+        path: /spec/values
+        value:
+          service:
+            spec:
+              type: LoadBalancer
+              externalIPs: 192.168.0.70
+          ingressRoute:
+            dashboard:
+              enabled: true
+              matchRule: Host(`traefik.kube.justinschoenfeld.com`)
+              entryPoints:
+                - web
+          providers:
+            kubernetesGateway:
+              enabled: true
+          gateway:
+            listeners:
+              web:
+                namespacePolicy:
+                  from: All

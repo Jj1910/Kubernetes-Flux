@@ -19,7 +19,7 @@ spec:
   patches:
   - target:
       kind: HelmRelease
-      name: kube-prometheus-stack
+      name: kube-prometheus-stack-release
     patch: |-
       - op: replace
         path: /spec/chart/spec/version
