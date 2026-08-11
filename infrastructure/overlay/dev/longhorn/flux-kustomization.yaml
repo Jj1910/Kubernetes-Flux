@@ -31,10 +31,10 @@ spec:
           defaultSettings:
             defaultDataPath: /var/mnt/longhorn
             #deletingConfirmationFlag: "true"
-          service:
-            ui:
-              #type: NodePort
-              #nodePort: 30004
-              type: LoadBalancer
+          #service:
+          #  ui:
+          #    type: NodePort
+          #    nodePort: 30004
+          #    type: LoadBalancer
           persistence:
             reclaimPolicy: Retain

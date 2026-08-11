@@ -31,7 +31,7 @@ spec:
           grafana:
             adminUser: demo
             adminPassword: demopass
-            service:
-              #type: NodePort
-              #nodePort: 30005
-              type: LoadBalancer
+            #service:
+            #  type: NodePort
+            #  nodePort: 30005
+            #  type: LoadBalancer

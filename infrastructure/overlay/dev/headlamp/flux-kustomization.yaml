@@ -34,11 +34,11 @@ spec:
           serviceAccount:
             create: true
             name: "headlamp-sa"
-          service:
-            #type: NodePort
-            port: 80
-            #nodePort: 30003
-            type: LoadBalancer
+          #service:
+          #  type: NodePort
+          #  port: 80
+          #  nodePort: 30003
+          #  type: LoadBalancer
           #Flux Plugin
           config:
             pluginsDir: /build/plugins
