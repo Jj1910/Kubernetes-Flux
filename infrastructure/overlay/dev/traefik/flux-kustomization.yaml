@@ -41,9 +41,6 @@ spec:
               matchRule: Host(`traefik.kube.justinschoenfeld.com`)
               entryPoints:
                 - websecure
-          providers:
-            kubernetesGateway:
-              enabled: false
           gateway:
             listeners:
               web:
