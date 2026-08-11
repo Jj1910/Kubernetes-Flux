@@ -33,7 +33,8 @@ spec:
             #deletingConfirmationFlag: "true"
           service:
             ui:
-              type: NodePort
-              nodePort: 30004
+              #type: NodePort
+              #nodePort: 30004
+              type: LoadBalancer
           persistence:
             reclaimPolicy: Retain
